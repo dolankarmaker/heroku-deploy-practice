@@ -16,7 +16,7 @@ const { MongoClient } = require('mongodb')
 require('dotenv').config()
 
 const app = express()
-const port = 5000
+const port =process.env.PORT || 5000
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.vmqip.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
